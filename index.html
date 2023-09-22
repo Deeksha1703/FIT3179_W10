@@ -21,12 +21,17 @@
   <div class="pure-u-1">
     <h2>Global Happiness Index 2021</h2>
     <div id="vis1" class="vis-container"></div>
+    <div id="vis2" class="vis-container"></div>
   </div>
 </div> <!-- end page -->
 
 <script type="text/javascript">
   var specVis1 = "chloropleth_map.vg.json";
+  var specVis2= "scatter_plot.vg.json";
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
