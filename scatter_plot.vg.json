@@ -15,6 +15,17 @@
     },
     "params": [
       {
+        "name": "GDP",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 11.5,
+          "step": 0.2,
+          "name": "Minimum GDP per capita: "
+        }
+      },
+      {
         "name": "Regional_Selection",
         "bind": {
           "input": "select",
