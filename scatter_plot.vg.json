@@ -5,7 +5,7 @@
     
     "title": "Correlation Of Healthy Life Expectancy And Happiness In 2021",
     "data": {
-      "url": "https://github.com/Deeksha1703/FIT3179_W10/main/country_data.json"
+      "url": "https://github.com/Deeksha1703/FIT3179_W10/blob/main/country_data.json"
     },
     "config": {
       "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":18,"titleFontSize":16,"labelLimit": 0},
