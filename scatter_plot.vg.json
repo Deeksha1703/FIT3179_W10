@@ -112,6 +112,7 @@
         "encoding": {
           "size": {
             "field": "Logged_GDP_per_capita",
+            "title": "GDP Per Capita",
             "type": "quantitative",
             "scale": {
               "type": "log",
