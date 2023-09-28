@@ -56,7 +56,7 @@
       "x": {
         "field": "Ladder_Score",
         "type": "quantitative",
-        "title": "Happiness Score",
+        "title": "Happiness Index",
         "axis": {"tickCount": 10}
       },
       "y": {
@@ -155,7 +155,7 @@
           "tooltip": [
             {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
             {"field": "Regional_Indicator", "type": "nominal", "title": "Regional Indicator"},
-            {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Score"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
             {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
             {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ",", "title": "Healthy Life Expectancy"}
           ]
