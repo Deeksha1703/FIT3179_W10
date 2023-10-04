@@ -1,166 +1,166 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 600,
-    "data": {
-      "url": "https://raw.githubusercontent.com/Deeksha1703/FIT3179_W10/main/country_data.json"
-    },
-    "config": {
-      "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 18, "titleFontSize": 16, "labelLimit": 0},
-      "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 16, "titleFontSize": 15, "labelLimit": 0},
-      "header": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 20, "titleFontSize": 15},
-      "title": {"font": "sans-serif", "subtitleFont": "sans-serif", "fontSize": 20}
-    },
-    "params": [
-      {
-        "name": "Regional_Selection",
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            "Western Europe",
-            "North America",
-            "Australia and New Zealand",
-            "Middle East and North Africa",
-            "Latin America and Caribbean",
-            "Central and Eastern Europe",
-            "East Asia",
-            "Southeast Asia",
-            "Commonwealth of Independent States",
-            "Sub-Saharan Africa",
-            "South Asia"
-          ],
-          "labels": [
-            "Show All",
-            "Western Europe",
-            "North America",
-            "Australia and New Zealand",
-            "Middle East and North Africa",
-            "Latin America and Caribbean",
-            "Central and Eastern Europe",
-            "East Asia",
-            "Southeast Asia",
-            "Commonwealth of Independent States",
-            "Sub-Saharan Africa",
-            "South Asia"
-          ],
-          "name": "Region: "
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Deeksha1703/FIT3179_W10/main/country_data.json"
+  },
+  "config": {
+    "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 18, "titleFontSize": 16, "labelLimit": 0},
+    "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 16, "titleFontSize": 15, "labelLimit": 0},
+    "header": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 20, "titleFontSize": 15},
+    "title": {"font": "sans-serif", "subtitleFont": "sans-serif", "fontSize": 20}
+  },
+  "params": [
+    {
+      "name": "Regional_Selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Western Europe",
+          "North America",
+          "Australia and New Zealand",
+          "Middle East and North Africa",
+          "Latin America and Caribbean",
+          "Central and Eastern Europe",
+          "East Asia",
+          "Southeast Asia",
+          "Commonwealth of Independent States",
+          "Sub-Saharan Africa",
+          "South Asia"
+        ],
+        "labels": [
+          "Show All",
+          "Western Europe",
+          "North America",
+          "Australia and New Zealand",
+          "Middle East and North Africa",
+          "Latin America and Caribbean",
+          "Central and Eastern Europe",
+          "East Asia",
+          "Southeast Asia",
+          "Commonwealth of Independent States",
+          "Sub-Saharan Africa",
+          "South Asia"
+        ],
+        "name": "Region: "
       }
-    ],
-    "transform": [
-      {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
-      {"filter": "datum.Year == 2021"}
-    ],
-    "encoding": {
-      "x": {
-        "field": "Ladder_Score",
-        "type": "quantitative",
-        "title": "Happiness Index",
-        "axis": {"tickCount": 10}
-      },
-      "y": {
-        "field": "Healthy_Life_Expectancy",
-        "type": "quantitative",
-        "title": "Healthy Life Expectancy",
-        "axis": {"tickCount": 7}
-      },
-      "color": {
-        "field": "Regional_Indicator",
-        "type": "nominal",
-        "scale": {
-          "domain": [
-            "Western Europe",
-            "North America",
-            "Australia and New Zealand",
-            "Middle East and North Africa",
-            "Latin America and Caribbean",
-            "Central and Eastern Europe",
-            "East Asia",
-            "Southeast Asia",
-            "Commonwealth of Independent States",
-            "Sub-Saharan Africa",
-            "South Asia"
-          ],
-          "range": [
-            "#1f77b4",
-            "#ff7f0e",
-            "#2ca02c",
-            "#d62728",
-            "#9467bd",
-            "#8c564b",
-            "#e377c2",
-            "#7f7f7f",
-            "#bcbd22",
-            "#17becf",
-            "#9c9c9c"
-          ]
-        },
-        "title": "Region"
+    }
+  ],
+  "transform": [
+    {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
+    {"filter": "datum.Year == 2021"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Ladder_Score",
+      "type": "quantitative",
+      "title": "Happiness Index",
+      "axis": {"tickCount": 10}
+    },
+    "y": {
+      "field": "Healthy_Life_Expectancy",
+      "type": "quantitative",
+      "title": "Healthy Life Expectancy",
+      "axis": {"tickCount": 7}
+    },
+    "size": {
+      "field": "population",
+      "type": "quantitative",
+      "title": "Population",
+      "scale": {
+        "type": "log",
+        "domain": [1e5, 1e8],  
+        "range": [100, 750]  
       }
     },
-    "layer": [
-      {
-        "selection": {
-          "continent_highlight": {
-            "type": "multi",
-            "fields": ["Regional_Indicator"],
-            "bind": "legend"
-          }
-        },
-        "mark": "circle",
-        "encoding": {
-          "size": {
-            "field": "Logged_GDP_per_capita",
-            "title": "GDP Per Capita",
-            "type": "quantitative",
-            "scale": {
-              "type": "log",
-              "domain": [7, 8, 9, 10],
-              "range": [100, 200, 450, 750]
-            }
-          },
-          "opacity": {
-            "condition": {"selection": "continent_highlight", "value": 0.6},
-            "value": 0.2
-          },
-          "tooltip": [
-            {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-            {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
-            {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
-            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
-            {"field": "Corruption", "type": "quantitative", "format": ","}
-          ]
+    "color": {
+      "field": "Regional_Indicator",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Western Europe",
+          "North America",
+          "Australia and New Zealand",
+          "Middle East and North Africa",
+          "Latin America and Caribbean",
+          "Central and Eastern Europe",
+          "East Asia",
+          "Southeast Asia",
+          "Commonwealth of Independent States",
+          "Sub-Saharan Africa",
+          "South Asia"
+        ],
+        "range": [
+          "#1f77b4",
+          "#ff7f0e",
+          "#2ca02c",
+          "#d62728",
+          "#9467bd",
+          "#8c564b",
+          "#e377c2",
+          "#7f7f7f",
+          "#bcbd22",
+          "#17becf",
+          "#9c9c9c"
+        ]
+      },
+      "title": "Region"
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Regional_Indicator"],
+          "bind": "legend"
         }
       },
-      {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "middle",
-          "dx": -12,
-          "fontSize": 11.5,
-          "fontStyle": "italic"
+      "mark": "circle",
+      "encoding": {
+        "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.6},
+          "value": 0.2
         },
-        "encoding": {
-          "text": {"field": "Country_Name", "type": "nominal"},
-          "color": {"value": "black"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Country_Name'] == 'Malaysia' || datum['Country_Name'] == 'Singapore' || datum['Country_Name'] == 'United States' || datum['Country_Name'] == 'Luxembourg' || datum['Country_Name'] == 'Togo'",
-              "value": 1
-            },
-            "value": 0
-          },
-          "tooltip": [
-            {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-            {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
-            {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
-            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
-            {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ",", "title": "Healthy Life Expectancy"}
-          ]
-        }
+        "tooltip": [
+          {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
+          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
+          {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
+          {"field": "Corruption", "type": "quantitative", "format": ","}
+        ]
       }
-    ]
-  }
-  
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country_Name", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country_Name'] == 'Malaysia' || datum['Country_Name'] == 'Singapore' || datum['Country_Name'] == 'United States' || datum['Country_Name'] == 'Luxembourg' || datum['Country_Name'] == 'Togo'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
+          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
+          {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
+          {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
+          {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ",", "title": "Life Expectancy"}
+        ]
+      }
+    }
+  ]
+}
