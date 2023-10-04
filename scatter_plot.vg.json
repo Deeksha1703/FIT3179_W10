@@ -134,8 +134,7 @@
           {"field": "Generosity", "type": "quantitative", "format": ",", "title": "Generosity"},
           {"field": "Social_Support", "type": "quantitative", "format": ",", "title": "Social Support"},
           {"field": "Freedom", "type": "quantitative", "format": ",", "title": "Freedom"},
-          {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"},
-          {"field": "Corruption", "type": "quantitative", "format": ","}
+          {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"}
         ]
       }
     },
