@@ -10,7 +10,7 @@
     "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 18, "titleFontSize": 16, "labelLimit": 0},
     "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 16, "titleFontSize": 15, "labelLimit": 0},
     "header": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 20, "titleFontSize": 15},
-    "title": {"font": "sans-serif", "subtitleFont": "sans-serif", "fontSize": 20}
+    "title": {"font": "sans-serif", "subtitleFont": "sans-serif", "fontSize": 30}
   },
   "params": [
     {
@@ -72,7 +72,7 @@
       "title": "Population",
       "scale": {
         "type": "sqrt",
-        "domain": [0, 1000000000], 
+        "domain": [0, 500000000], 
         "range": [0, 500]  
       }
     },
