@@ -56,13 +56,13 @@
     "x": {
       "field": "Ladder_Score",
       "type": "quantitative",
-      "title": "Happiness Score",
+      "title": "Happiness Index",
       "axis": {"tickCount": 10}
     },
     "y": {
       "field": "Healthy_Life_Expectancy",
       "type": "quantitative",
-      "title": "Healthy Life Expectancy",
+      "title": "Life Expectancy",
       "axis": {"tickCount": 7}
     },
     "color": {
