@@ -74,7 +74,8 @@
         "type": "sqrt",
         "domain": [0, 1000000000], 
         "range": [100, 800]  
-      }
+      },
+      "legend": {"format": "s"} 
     },
     "color": {
       "field": "Regional_Indicator",
