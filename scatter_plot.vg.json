@@ -3,6 +3,7 @@
   "width": "container",
   "height": 600,
   "title": "Relationship Between Happiness and Life Expectancy",
+  "padding": 10,
   "data": {
     "url": "https://raw.githubusercontent.com/Deeksha1703/FIT3179_W10/main/country_data.json"
   },
