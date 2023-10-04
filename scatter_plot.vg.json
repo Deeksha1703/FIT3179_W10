@@ -63,7 +63,7 @@
       "field": "Healthy_Life_Expectancy",
       "type": "quantitative",
       "title": "Life Expectancy",
-      "axis": {"tickCount": 7, "scale": {"domain": [0, 2000]}}
+      "axis": {"tickCount": 7}
     },
     "size": {
       "field": "population",
@@ -72,7 +72,7 @@
       "scale": {
         "type": "sqrt",
         "domain": [0, 1500000000], 
-        "range": [0, 2000]  
+        "range": [0, 500]  
       }
     },
     "color": {
