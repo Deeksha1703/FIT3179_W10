@@ -72,9 +72,9 @@
       "scale": {
         "type": "sqrt",
         "domain": [0, 1500000000], 
-        "range": [0, 2000]  
+        "range": [0, 500]  
       }
-    },    
+    },
     "color": {
       "field": "Regional_Indicator",
       "type": "nominal",
@@ -134,7 +134,8 @@
           {"field": "Generosity", "type": "quantitative", "format": ",", "title": "Generosity"},
           {"field": "Social_Support", "type": "quantitative", "format": ",", "title": "Social Support"},
           {"field": "Freedom", "type": "quantitative", "format": ",", "title": "Freedom"},
-          {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"}
+          {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"},
+          {"field": "Corruption", "type": "quantitative", "format": ","}
         ]
       }
     },
