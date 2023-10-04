@@ -126,7 +126,7 @@
         },
         "tooltip": [
           {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-          {"field": "Regional_Indicator", "type": "nominal", "title": "Regiona"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
           {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
           {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
           {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
