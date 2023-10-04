@@ -64,7 +64,7 @@
       "field": "Healthy_Life_Expectancy",
       "type": "quantitative",
       "title": "Life Expectancy",
-      "axis": {"tickCount": 7}
+      "axis": {"tickCount": 10}
     },
     "size": {
       "field": "population",
