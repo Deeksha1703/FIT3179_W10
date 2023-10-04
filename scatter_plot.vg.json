@@ -65,6 +65,16 @@
       "title": "Life Expectancy",
       "axis": {"tickCount": 7}
     },
+    "size": {
+      "field": "population",
+      "type": "quantitative",
+      "title": "Population",
+      "scale": {
+        "type": "sqrt",
+        "domain": [0, 1500000000], 
+        "range": [0, 500]  
+      }
+    },
     "color": {
       "field": "Regional_Indicator",
       "type": "nominal",
@@ -110,16 +120,6 @@
       },
       "mark": "circle",
       "encoding": {
-        "size": {
-          "field": "Logged_GDP_per_capita",
-          "title": "GDP per Capita",
-          "type": "quantitative",
-          "scale": {
-            "type": "log",
-            "domain": [7, 8, 9, 10],
-            "range": [100, 200, 450, 750]
-          }
-        },
         "opacity": {
           "condition": {"selection": "continent_highlight", "value": 0.6},
           "value": 0.2
@@ -131,7 +131,10 @@
           {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
           {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
           {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ",", "title": "Life Expectancy"},
-          {"field": "Corruption", "type": "quantitative", "format": ","}
+          {"field": "Generosity", "type": "quantitative", "format": ",", "title": "Generosity"},
+          {"field": "Social_Support", "type": "quantitative", "format": ",", "title": "Social Support"},
+          {"field": "Freedom", "type": "quantitative", "format": ",", "title": "Freedom"},
+          {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"}
         ]
       }
     },
@@ -144,6 +147,6 @@
         "fontSize": 11.5,
         "fontStyle": "italic"
       }
-      }
+    }
   ]
 }
