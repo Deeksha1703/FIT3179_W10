@@ -73,7 +73,7 @@
       "scale": {
         "type": "sqrt",
         "domain": [0, 1000000000], 
-        "range": [60,300]  
+        "range": [120,600]  
       }
     },
     "color": {
