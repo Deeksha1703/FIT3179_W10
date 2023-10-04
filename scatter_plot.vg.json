@@ -73,8 +73,8 @@
       "title": "Population",
       "scale": {
         "type": "sqrt",
-        "domain": [0, 50000000], 
-        "range": [500]  
+        "domain": [0, 1500000000], 
+        "range": [5000]  
       }
     },
     "color": {
