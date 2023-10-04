@@ -56,7 +56,7 @@
     "x": {
       "field": "Ladder_Score",
       "type": "quantitative",
-      "title": "Happiness Index",
+      "title": "Happiness Score",
       "axis": {"tickCount": 10}
     },
     "y": {
@@ -64,16 +64,6 @@
       "type": "quantitative",
       "title": "Healthy Life Expectancy",
       "axis": {"tickCount": 7}
-    },
-    "size": {
-      "field": "population",
-      "type": "quantitative",
-      "title": "Population",
-      "scale": {
-        "type": "log",
-        "domain": [1e5, 1e8],  
-        "range": [100, 750]  
-      }
     },
     "color": {
       "field": "Regional_Indicator",
@@ -120,15 +110,25 @@
       },
       "mark": "circle",
       "encoding": {
+        "size": {
+          "field": "Logged_GDP_per_capita",
+          "title": "GDP per Capita",
+          "type": "quantitative",
+          "scale": {
+            "type": "log",
+            "domain": [7, 8, 9, 10],
+            "range": [100, 200, 450, 750]
+          }
+        },
         "opacity": {
           "condition": {"selection": "continent_highlight", "value": 0.6},
           "value": 0.2
         },
         "tooltip": [
           {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-          {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
-          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
-          {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Regional Indicator"},
+          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Score"},
+          {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
           {"field": "Corruption", "type": "quantitative", "format": ","}
         ]
       }
@@ -142,25 +142,15 @@
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
-      "encoding": {
-        "text": {"field": "Country_Name", "type": "nominal"},
-        "color": {"value": "black"},
-        "opacity": {
-          "condition": {
-            "test": "datum['Country_Name'] == 'Malaysia' || datum['Country_Name'] == 'Singapore' || datum['Country_Name'] == 'United States' || datum['Country_Name'] == 'Luxembourg' || datum['Country_Name'] == 'Togo'",
-            "value": 1
-          },
-          "value": 0
-        },
+      
         "tooltip": [
           {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-          {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
-          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
-          {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Regional Indicator"},
+          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Score"},
           {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
+          {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
           {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ",", "title": "Life Expectancy"}
         ]
       }
-    }
   ]
 }
