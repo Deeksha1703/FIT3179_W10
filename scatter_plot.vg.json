@@ -138,6 +138,27 @@
           {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"}
         ]
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "fontSize": 12 
+      },
+      "encoding": {
+        "x": {"field": "Ladder_Score", "type": "quantitative"},
+        "y": {"field": "Healthy_Life_Expectancy", "type": "quantitative"},
+        "text": {"field": "Country_Name", "type": "nominal"},
+        "color": {"value": "black"}
+      },
+      "transform": [
+        {"filter": "datum.Country_Name == 'Afghanistan' || datum.Country_Name == 'Finland'"}
+      ],
+      "config": {
+        "text": {"fontSize": 12}
+      }
     }
   ]
 }
