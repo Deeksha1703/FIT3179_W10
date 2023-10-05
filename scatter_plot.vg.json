@@ -106,7 +106,7 @@
           "scale": {
             "type": "sqrt",
             "domain": [0, 1000000000],
-            "range": [100, 1500]
+            "range": [100, 5000]
           }
         },
         "color": {
@@ -160,7 +160,7 @@
         "align": "right",
         "baseline": "middle",
         "dx": -12,
-        "fontSize": 12.5,
+        "fontSize": 16,
         "fontStyle": "italic",
         "fontWeight":"bold"
       },
