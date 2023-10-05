@@ -158,7 +158,7 @@
       "mark": {
         "type": "text",
         "align": "right",
-        "baseline": "middle",
+        "baseline": {"condition": {"test": "datum['Country_Name'] == 'Finland'", "value": "top"}, "value": "middle"},
         "dx": -12,
         "fontSize": 12.5,
         "fontStyle": "italic",
