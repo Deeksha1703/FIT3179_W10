@@ -72,8 +72,8 @@
       "title": "Population",
       "scale": {
         "type": "sqrt",
-        "domain": [0, 1000000000], 
-        "range": [100,500]  
+        "domain": [0, 1000000000],
+        "range": [100, 500]
       }
     },
     "color": {
@@ -108,6 +108,17 @@
         ]
       },
       "title": "Region"
+    },
+    "text": {
+      "field": "Country_Name",
+      "type": "nominal",
+      "condition": [
+        {"test": "datum['Country_Name'] == 'Finland'", "value": "Finland (happiest)"},
+        {"test": "datum['Country_Name'] == 'Afghanistan'", "value": "Afghanistan (least happiest)"},
+        {"test": "datum['Country_Name'] != 'Finland' && datum['Country_Name'] != 'Afghanistan'", "value": ""}
+      ],
+      "fontSize": 11.5,
+      "fontStyle": "italic"
     }
   },
   "layer": [
@@ -137,16 +148,6 @@
           {"field": "Freedom", "type": "quantitative", "format": ",", "title": "Freedom"},
           {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"}
         ]
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "middle",
-        "dx": -12,
-        "fontSize": 11.5,
-        "fontStyle": "italic"
       }
     }
   ]
