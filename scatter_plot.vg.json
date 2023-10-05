@@ -160,7 +160,7 @@
         "align": "right",
         "baseline": "middle",
         "dx": -12,
-        "fontSize": 16,
+        "fontSize": 12.5,
         "fontStyle": "italic",
         "fontWeight":"bold"
       },
@@ -173,14 +173,7 @@
             "value": 1
           },
           "value": 0
-        },
-        "tooltip": [
-          {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-          {"field": "Regional_Indicator", "type": "nominal", "title": "Regional Indicator"},
-          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
-          {"field": "population", "type": "quantitative", "title": "Population", "format": ",.0f"},
-          {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ","}
-        ]
+        }
       }
     }
   ]
