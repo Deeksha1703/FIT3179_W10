@@ -1,16 +1,37 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 700,
+  "height": 600,
   "title": "Relationship Between Happiness and Life Expectancy",
   "data": {
     "url": "https://raw.githubusercontent.com/Deeksha1703/FIT3179_W10/main/country_data.json"
   },
   "config": {
-    "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 18, "titleFontSize": 16, "labelLimit": 0},
-    "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 16, "titleFontSize": 15, "labelLimit": 0},
-    "header": {"labelFont": "sans-serif", "titleFont": "sans-serif", "labelFontSize": 20, "titleFontSize": 15},
-    "title": {"font": "sans-serif", "subtitleFont": "sans-serif", "fontSize": 30, "align": "center"}
+    "axis": {
+      "labelFont": "sans-serif",
+      "titleFont": "sans-serif",
+      "labelFontSize": 18,
+      "titleFontSize": 16,
+      "labelLimit": 0
+    },
+    "legend": {
+      "labelFont": "sans-serif",
+      "titleFont": "sans-serif",
+      "labelFontSize": 16,
+      "titleFontSize": 15,
+      "labelLimit": 0
+    },
+    "header": {
+      "labelFont": "sans-serif",
+      "titleFont": "sans-serif",
+      "labelFontSize": 20,
+      "titleFontSize": 15
+    },
+    "title": {
+      "font": "sans-serif",
+      "subtitleFont": "sans-serif",
+      "fontSize": 20
+    }
   },
   "params": [
     {
@@ -64,50 +85,7 @@
       "field": "Healthy_Life_Expectancy",
       "type": "quantitative",
       "title": "Life Expectancy",
-      "axis": {"tickCount": 10}
-    },
-    "size": {
-      "field": "population",
-      "type": "quantitative",
-      "title": "Population",
-      "scale": {
-        "type": "sqrt",
-        "domain": [0, 1000000000],
-        "range": [100, 500]
-      }
-    },
-    "color": {
-      "field": "Regional_Indicator",
-      "type": "nominal",
-      "scale": {
-        "domain": [
-          "Western Europe",
-          "North America",
-          "Australia and New Zealand",
-          "Middle East and North Africa",
-          "Latin America and Caribbean",
-          "Central and Eastern Europe",
-          "East Asia",
-          "Southeast Asia",
-          "Commonwealth of Independent States",
-          "Sub-Saharan Africa",
-          "South Asia"
-        ],
-        "range": [
-          "#1f77b4",
-          "#ff7f0e",
-          "#2ca02c",
-          "#d62728",
-          "#9467bd",
-          "#8c564b",
-          "#e377c2",
-          "#7f7f7f",
-          "#bcbd22",
-          "#17becf",
-          "#9c9c9c"
-        ]
-      },
-      "title": "Region"
+      "axis": {"tickCount": 7}
     }
   },
   "layer": [
@@ -121,43 +99,87 @@
       },
       "mark": "circle",
       "encoding": {
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "title": "Population",
+          "scale": {
+            "type": "sqrt",
+            "domain": [0, 1000000000],
+            "range": [100, 500]
+          }
+        },
+        "color": {
+          "field": "Regional_Indicator",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Western Europe",
+              "North America",
+              "Australia and New Zealand",
+              "Middle East and North Africa",
+              "Latin America and Caribbean",
+              "Central and Eastern Europe",
+              "East Asia",
+              "Southeast Asia",
+              "Commonwealth of Independent States",
+              "Sub-Saharan Africa",
+              "South Asia"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#2ca02c",
+              "#d62728",
+              "#9467bd",
+              "#8c564b",
+              "#e377c2",
+              "#7f7f7f",
+              "#bcbd22",
+              "#17becf",
+              "#9edae5"
+            ]
+          }
+        },
         "opacity": {
           "condition": {"selection": "continent_highlight", "value": 0.6},
           "value": 0.2
         },
         "tooltip": [
           {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
-          {"field": "Regional_Indicator", "type": "nominal", "title": "Region"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Regional Indicator"},
           {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
-          {"field": "population", "type": "quantitative", "format": ",", "title": "Population"},
-          {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",", "title": "GDP per Capita"},
-          {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ",", "title": "Life Expectancy"},
-          {"field": "Generosity", "type": "quantitative", "format": ",", "title": "Generosity"},
-          {"field": "Social_Support", "type": "quantitative", "format": ",", "title": "Social Support"},
-          {"field": "Freedom", "type": "quantitative", "format": ",", "title": "Freedom"},
-          {"field": "Corruption", "type": "quantitative", "format": ",", "title": "Corruption"}
+          {"field": "population", "type": "quantitative", "title": "Population", "format": ",.0f"},
+          {"field": "Corruption", "type": "quantitative", "format": ","}
         ]
       }
     },
     {
       "mark": {
         "type": "text",
-        "align": "left",
+        "align": "right",
         "baseline": "middle",
-        "dx": 5,
-        "fontSize": 12 
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
       },
       "encoding": {
-        "x": {"field": "Ladder_Score", "type": "quantitative"},
-        "y": {"field": "Healthy_Life_Expectancy", "type": "quantitative"},
         "text": {"field": "Country_Name", "type": "nominal"},
-        "color": {"value": "black"}
-      },
-      "transform": [
-        {"filter": "datum.Country_Name == 'Afghanistan' || datum.Country_Name == 'Finland'"}
-      ],
-      "config": {
-        "text": {"fontSize": 12}
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country_Name'] == 'Finland' || datum['Country_Name'] == 'Afghanistan'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country_Name", "type": "nominal", "title": "Country Name"},
+          {"field": "Regional_Indicator", "type": "nominal", "title": "Regional Indicator"},
+          {"field": "Ladder_Score", "type": "quantitative", "format": ",", "title": "Happiness Index"},
+          {"field": "population", "type": "quantitative", "title": "Population", "format": ",.0f"},
+          {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ","}
+        ]
       }
     }
   ]
