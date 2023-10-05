@@ -157,11 +157,12 @@
     {
       "mark": {
         "type": "text",
-        "align": "right",
+        "align": "left",
         "baseline": "middle",
         "dx": -12,
-        "fontSize": 11.5,
-        "fontStyle": "italic"
+        "fontSize": 12.5,
+        "fontStyle": "italic",
+        "fontWeight":"bold"
       },
       "encoding": {
         "text": {"field": "Country_Name", "type": "nominal"},
