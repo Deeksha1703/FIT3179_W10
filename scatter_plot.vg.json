@@ -108,17 +108,6 @@
         ]
       },
       "title": "Region"
-    },
-    "text": {
-      "field": "Country_Name",
-      "type": "nominal",
-      "condition": [
-        {"test": "datum['Country_Name'] == 'Finland'", "value": "Finland (happiest)", "color": {"value": "black"}},
-        {"test": "datum['Country_Name'] == 'Afghanistan'", "value": "Afghanistan (least happiest)", "color": {"value": "black"}},
-        {"test": "datum['Country_Name'] != 'Finland' && datum['Country_Name'] != 'Afghanistan'", "value": ""}
-      ],
-      "fontSize": 11.5,
-      "fontStyle": "italic"
     }
   },
   "layer": [
